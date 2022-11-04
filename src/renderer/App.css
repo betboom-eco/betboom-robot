@@ -1,0 +1,50 @@
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: 430px;
+  cursor: default;
+  background-color: #141414;
+  /* font-family: 'Roboto', 'DIN Alternate', 'DINPro', -apple-system,
+    BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft Yahei', 'Microsoft Jhenghei', sans-serif !important; */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  src: url('../../assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rotate {
+  animation: spin 2s linear infinite;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+* {
+  user-select: none;
+}
+.selectable {
+  user-select: text;
+}

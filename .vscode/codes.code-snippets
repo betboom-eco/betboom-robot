@@ -1,0 +1,132 @@
+{
+  "react-intl defineMessage": {
+    "scope": "javascript,typescript",
+    "prefix": "dm",
+    "body": [
+      "${1:key}: {",
+      "  id: '$TM_FILENAME_BASE.$1',",
+      "  defaultMessage: '$1',",
+      "  description: '$0',",
+      "},"
+    ]
+  },
+  "className in jsx": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "cij",
+    "body": ["<div className={classes.${1:name}}>$0</div>"]
+  },
+  "create React Class Component with style": {
+    "scope": "typescriptreact",
+    "prefix": "erc",
+    "body": [
+      "import React from 'react';",
+      "import clsx from 'clsx';\n",
+      "import { StyleContext } from 'themes';",
+      "import { withStyles2 } from 'utils';\n",
+      "const styles = ({}: StyleContext) => ({",
+      "  root: {},",
+      "});\n",
+      "type PropsType = any;\n",
+      "@withStyles2(styles)",
+      "export default class ${1:$TM_FILENAME_BASE} extends React.PureComponent<PropsType> {",
+      "  render(){",
+      "    const { classes } = this.props as any",
+      "    return (<div className={classes.root}>",
+      "      $0",
+      "    </div>);",
+      "  }",
+      "}"
+    ]
+  },
+  "create React Function Component with style": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "erf",
+    "body": [
+      "import React from 'react';",
+      "import { createUseStyles } from 'react-jss';",
+      "import clsx from 'clsx';",
+      "",
+      "// #region",
+      "const styles = ({ palette: { primary, text }, $$mob }) => ({ root: {} });\n",
+      "const useStyles = createUseStyles(styles);\n",
+      "// #endregion\n",
+      "export function ${1:$TM_FILENAME_BASE}(props: any) {",
+      "  const classes = useStyles();",
+      "  return <div className={classes.root}>$0</div>",
+      "}"
+    ]
+  },
+  "formik Form": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "formik",
+    "body": [
+      "<div className={classes.form}>",
+      "  <Formik onSubmit={this.submit} validate={this.validate} initialValues={{",
+      "    ${1:foo}: '${0:bar}'",
+      "  }}>",
+      "    {({values, isSubmitting, handleSubmit}) => <form noValidate onSubmit={handleSubmit}>",
+      "      <div className={classes.field}>",
+      "        <Field name=\"$1\" component=\"input\" />",
+      "      </div>",
+      "      <div className={classes.buttons}>",
+      "        <button type=\"submit\">提交</button>",
+      "      </div>",
+      "    </form>}",
+      "  </Formik>",
+      "</div>"
+    ]
+  },
+  "formik Methods": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "formth",
+    "body": [
+      "validate = (values) => {",
+      "  const errors: any = {};",
+      "  //$0",
+      "  return errors;",
+      "};\n",
+      "submit = (values, { setSubmitting, resetForm }) => {",
+      "  //",
+      "  resetForm();",
+      "};\n"
+    ]
+  },
+  "react-redux connect": {
+    "scope": "typescriptreact",
+    "prefix": "conn",
+    "body": [
+      "import { connect } from 'utils'\n",
+      "const mapStateToProps = s => ({",
+      "  // TODO",
+      "})\n",
+      "const mapActionToProps = {",
+      "}\n",
+      "type ConnectedProps = ReturnType<typeof mapStateToProps> & typeof mapActionToProps\n",
+      "@connect(mapStateToProps, mapActionToProps)"
+    ]
+  },
+  "i18n": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "t",
+    "body": ["$$t(msgs$0)"]
+  },
+  "jssmob": {
+    "scope": "typescriptreact",
+    "prefix": "mob",
+    "body": ["[$$mob]: { $0 },"]
+  },
+  "jssclass": {
+    "scope": "typescriptreact",
+    "prefix": "jsc",
+    "body": ["'& .$1': { $0 },"]
+  },
+  "useIntel": {
+    "scope": "typescriptreact",
+    "prefix": "uit",
+    "body": [
+      "import * as msgs from '@/messages';",
+      "import { useIntl } from 'react-intl';\n",
+      "const { $$t } = useIntl();$0"
+    ]
+  }
+}
